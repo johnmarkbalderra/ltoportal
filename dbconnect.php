@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *"); // Allow requests from any origin
 $servername = "fdb1029.awardspace.net";
 $username = "4564847_land";
 $password = "landlto123";
@@ -11,6 +12,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully!";
+    echo json_encode(["status" => "success", "message" => "Connected successfully!"]);
 }
 ?>
